@@ -1,8 +1,10 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
+import useBarCodeScanner from '../hooks/useCodeBar';
 
 const Home: React.FC = () => {
+  const {onScan} = useBarCodeScanner();
   return (
     <IonPage>
       <IonHeader>
@@ -13,10 +15,11 @@ const Home: React.FC = () => {
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
+            <IonTitle size="large">ScanApp</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer />
+        <IonButton onClick={onScan}>Scan</IonButton>
+
       </IonContent>
     </IonPage>
   );
