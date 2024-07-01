@@ -1,0 +1,7 @@
+{
+  "name": "ScanApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
